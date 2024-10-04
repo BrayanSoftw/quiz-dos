@@ -1,27 +1,20 @@
-#Nombre: Luis Vejarano
-#Días: 7
-#Salario: 785000
-#Prima: salario x días laborados / 360
-#Cesantías: salario x días laborados / 360
-#Intereses cesantías: cesantías x 12% / días laborados
-#Vacaciones: salario x días laborados / 720
+nombre = input("Ingrese su nombre: ")
+dias = int(input("Ingrese la cantidad de dias: "))
+salario = int(input("Ingrese el salario: "))
+Prima = (salario * dias) / 360
+Cesantias = (salario * dias) / 360
+Intereses_cesantias = Cesantias * 0.12 / dias
+Vacaciones = (salario * dias) / 720
 
 
-#nombre = input('Ingrese su nombre: ')
-#dias = int(input('Ingrese la cantidad de dias: '))
-#salario = int(input('Ingrese el salario: '))
-nombre='Luis'
-dia=7
-salario = 785000
-prima = (salario*dia)/360
-def calcularSalario(salario,dia):
-    #dia = 7
-    #prima = (dia*salario)/360
-    #return prima
-    #prima = calcularSalario(salario,dias)
-    #print('prima: ' +prima)
-    #print('cesantias: ' + prima)
-    #print('intereses: ' + prima)
-    prima = calcularSalario(salario,dia)
-    print('prima: ' + prima)
-calcularSalario (prima)
+def calcularLiquidacion():
+    liquidacion = (Prima + Cesantias + Intereses_cesantias + Vacaciones)
+    return liquidacion
+
+
+print(f"Señor {nombre} para los {dias} dias laborados y salario {salario}, su liquidacion se compone asi: \n"
+      f"Prima: ${Prima:.2f} \n"
+f"Cesantias: ${Cesantias:.2f} \n"
+f"Intereses cesantias: ${Intereses_cesantias:.2f} \n"
+f"vacaiones: ${Vacaciones:.2f} \n"
+f"luqidacion: ${calcularLiquidacion():.2f}")
